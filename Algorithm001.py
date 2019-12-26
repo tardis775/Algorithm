@@ -28,28 +28,41 @@ print("입력되는 모든 보드의 가장자리에는 모두 '#'이 있다. �
 "최소 몇 번 만에 빨간 구슬을 구멍을 통해 빼낼 수 있는지 출력한다. "
 "만약, 10번 이하로 움직여서 빨간 구슬을 구멍을 통해 빼낼 수 없으면 -1을 출력한다."
 
-#공백을 기준으로 구분   지정범위를 벗어날시 예외처리 필요
-w, h = input("보드의 가로값과 세로값을 입력해 주세요.").split() 
+def input_num():
+    global w, h
+    #공백을 기준으로 구분   
+    w, h = input("보드의 가로값과 세로값을 입력해 주세요.").split() 
+    #형변환
+    w = int(w)
+    h = int(h)
+    if 3<=w<=10 and 3<=h<=10:
+        return w, h
+    else:
+        print("범위에 맞는 값을 입력해 주세요")
+        input_num()
 
-#형변환
-w = int(w)
-h = int(h)
+input_num()
 i = 0
-count = 0
 
 #2차원 배열 선언
 board = [[0 for col in range(w)]for row in range(h)]
 
-#입력값 저장            저장시 w갯수로 저장할 수 있도록 예외처리 필요
-while i < h:
-    s = input()
-    for j in list(s):
-        count += 1
-    if count != w:
-        print("가로값에 맞게 입력해 주세요.")
-    else:
-        board[i] = list(s)
+#입력값 저장            
+def insert_board(h,w,i):
     count = 0
-    i += 1
+    i = i
+    while i < h:
+        s = input()
+        for j in list(s):
+            count += 1
+        if count != w:
+            print("가로값에 맞게 입력해 주세요.")
+            insert_board(h,w,i)
+            break
+        else:
+            board[i] = list(s)
+        count = 0
+        i += 1
+    return board
 
-print(board)
+print(insert_board(h,w,0))
