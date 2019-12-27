@@ -48,7 +48,7 @@ i = 0
 board = [[0 for col in range(w)]for row in range(h)]
 
 #입력값 저장            
-def insert_board(h,w,i):
+def insert_board(h,w,i): 
     count = 0
     i = i
     while i < h:
