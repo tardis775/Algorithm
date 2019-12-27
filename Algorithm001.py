@@ -41,12 +41,6 @@ def input_num():
         print("범위에 맞는 값을 입력해 주세요")
         input_num()
 
-input_num()
-i = 0
-
-#2차원 배열 선언
-board = [[0 for col in range(w)]for row in range(h)]
-
 #입력값 저장            
 def insert_board(h,w,i): 
     count = 0
@@ -64,5 +58,11 @@ def insert_board(h,w,i):
         count = 0
         i += 1
     return board
+
+input_num()
+i = 0
+
+#2차원 배열 선언
+board = [[0 for col in range(w)]for row in range(h)]
 
 print(insert_board(h,w,0))
