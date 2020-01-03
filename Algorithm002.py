@@ -12,7 +12,7 @@ num2 = []
 score = []
 s = 0
 b = 0
-z = 0
+x = 0
 num = random.randint(1,9)
 
 for r in range(3):
@@ -25,15 +25,28 @@ print(score)
 
 while True:
     num2 = input("숫자를 입력해 주세요. : ").split()
-    for i in score:
-        if score[z] == num2[z]:
-            s += 1 
-        else : b += 1
-        z += 1
+    num2 = list(map(int, num2))   # 문자열 리스트 int형태로 변환
 
-    print(s,"스트라이크 ",b,"볼 입니다.",z)
+    for i in score: # 스트라이크 카운트 업 
+        if score[x] == num2[x]: 
+            s += 1 
+        else :
+            y = 0
+            for i in score:  # 볼 카운트 업
+                if score[x] == num2[y]: 
+                    b += 1  
+                y += 1
+        x += 1
+
+    if s == 3:
+        print(s,"스트라이크 정답입니다.")
+        break
+    elif s == 0 and b == 0:
+        print("OUT 입니다.")
+    else :
+        print(s,"스트라이크 ",b,"볼 입니다.",x,y)
     
     s = 0
     b = 0
-    z = 0
+    x = 0
     num2 = []
