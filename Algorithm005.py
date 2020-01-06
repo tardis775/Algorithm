@@ -47,3 +47,42 @@ result = list(divide_list(num_list, n))
 
 print(result)
 #배열 나누는것 까지 함
+
+#같은 눈이 4개가 나오면 50,000원+(같은 눈)*5,000원의 상금을 받게 된다. 
+def four (a):
+    money = 50000 + a * 5000
+    return money
+#같은 눈이 3개만 나오면 10,000원+(3개가 나온 눈)*1,000원의 상금을 받게 된다. 
+def thre (a):
+    money = 10000 + a * 1000
+    return money
+#같은 눈이 2개씩 두 쌍이 나오는 경우에는 2,000원+(2개가 나온 눈)*500원+(또 다른 2개가 나온 눈)*500원의 상금을 받게 된다.
+def doub (a, b):
+    money = 2000 + a * 500 + b * 500
+    return money
+#같은 눈이 2개만 나오는 경우에는 1,000원+(같은 눈)*100원의 상금을 받게 된다. 
+def two (a):
+    money = 1000 + a * 100
+    return money
+#모두 다른 눈이 나오는 경우에는 (그 중 가장 큰 눈)*100원의 상금을 받게 된다.  
+
+
+a = 0
+b = 0
+c = 0
+count = 0
+while a < num:
+    for i in range(4):
+        c = result[a][b]
+        d = 0
+        b += 1
+        for i in range(4-b):
+            b += 1
+            print(result)
+            if c == result[a][b]:
+                count += 1
+            d += 1
+        a += 1
+        b = 0
+
+print(a,b,c,count)
