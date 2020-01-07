@@ -72,16 +72,20 @@ b = 0
 c = 0
 count = 0
 while a < num:
+
     for i in range(4):
         c = result[a][b]
         d = 0
         b += 1
+
         for i in range(4-b):
             b += 1
             print(result)
+
             if c == result[a][b]:
                 count += 1
             d += 1
+            
         a += 1
         b = 0
 
