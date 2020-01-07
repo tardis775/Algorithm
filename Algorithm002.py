@@ -5,7 +5,7 @@
 # 숫자와 위치가 모두 맞을 때는 스트라이크
 # 숫자와 위치가 모두 틀렸을 때는 아웃
 
-
+#랜덤 함수 호출
 import random
 
 num2 = []
@@ -13,8 +13,10 @@ score = []
 s = 0
 b = 0
 x = 0
+# .randint(랜덤 숫자 범위)
 num = random.randint(1,9)
 
+# 배열에 랜덤으로 숫자를 채움
 for r in range(3):
     while num in score:
         num = random.randint(1,9)
