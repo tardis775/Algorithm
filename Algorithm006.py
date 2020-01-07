@@ -26,7 +26,36 @@
 
 # 피보나치 수열 심화
 
-day = input("할머니가 넘어온날을 입력해 주세요(3≤D≤30) : ")
+def Fibo_P(day, count):
+    
+    First_day = 1
+    Second_day = 1
 
+    for i in range(day):
+        temp = First_day
+        First_day = Second_day
+        Second_day = First_day + temp
+
+    return Second_day
+
+def Fibo_M(day, count):
+    
+    return
+
+day = input("할머니가 넘어온날을 입력해 주세요(3≤D≤30) : ")
+day = int(day)
 
 count = input("호랑이에게 떡을 준 개수(10≤K≤100,000) : ")
+count = int(count)
+
+'''
+피보나치 수열로
+
+경우의수 1 :
+    넘어온 날 3
+    떡을 준 개수 : 100,000 일 경우
+    1 - 10, 2 - 99,990, 3 - 100,000
+    1 - 100, 2 - 99,900, 3 - 100,000
+    >범위가 방대하다, 정확한 수치가 측정이 되지 않는다
+
+'''
