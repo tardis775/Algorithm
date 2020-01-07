@@ -18,7 +18,7 @@ while True:
     if year_type == 0 :
         year -= 543
         print("불기 ", year, "입니다.")
-        
+
     else : 
         year += 543 
         print("서기 ", year, "입니다.")
