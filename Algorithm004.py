@@ -6,12 +6,15 @@
 # 불기 연도가 주어질 때 이를 서기 연도로 바꿔 주는 프로그램을 작성하시오.
 
 while True:
+
     print("서기 : 0, 불기 : 1")
+    
     year_type = input("연도 타입을 입력해 주세요")
     year_type = int(year_type)
 
     year = input("연도를 입력해 주세요")
     year = int(year)
+
     if year_type == 0 :
         year -= 543
         print("불기 ", year, "입니다.")
