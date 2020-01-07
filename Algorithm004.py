@@ -8,7 +8,7 @@
 while True:
 
     print("서기 : 0, 불기 : 1")
-    
+
     year_type = input("연도 타입을 입력해 주세요")
     year_type = int(year_type)
 
@@ -18,6 +18,7 @@ while True:
     if year_type == 0 :
         year -= 543
         print("불기 ", year, "입니다.")
+        
     else : 
         year += 543 
         print("서기 ", year, "입니다.")
