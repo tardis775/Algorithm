@@ -23,7 +23,7 @@ star = input("숫자 N을 입력해 주세요 : ")
 star = int(star)
 
 for i in range(star):
-    for j in range(star):
+    for j in range(star-1):
         if i == 0:
             print('*', end = '')
         elif i == j:
@@ -32,13 +32,17 @@ for i in range(star):
     for j in range(star):
         if i == j:
             print('*', end = '')
+        elif star-i == 1 and star-i-j == 1:
+            print('*', end = '')
         else: print(' ', end = '')
         
     for j in range(star-2, -1, -1):
         if i == j:
             print('*', end = '')
+        elif star-i == 1 and star-i-j == 1:
+            print('*', end = '')
         else: print(' ', end = '')
-    for j in range(star-1, -1, -1):
+    for j in range(star-2, -1, -1):
         if i == 0:
             print('*', end = '')
         elif i == j:
@@ -47,23 +51,23 @@ for i in range(star):
     print('')
     
 
-for i in range(star-1):
+for i in range(star):
     for j in range(star-2, -1, -1):
-        if i == 3:
+        if i == star-2:
             print('*', end = '')
         elif i == j:
             print('*', end = '')
         else: print(' ', end = '')
-    for j in range(star, -1, -1):
+    for j in range(star-1, -1, -1):
         if i == j-1:
             print('*', end = '')
         else: print(' ', end = '')
-    for j in range(star):
+    for j in range(star-1):
         if i == j:
             print('*', end = '')
         else: print(' ', end = '')
     for j in range(star-1):
-        if i == 3:
+        if i == star-2:
             print('*', end = '')
         elif i == j:
             print('*', end = '')
