@@ -29,8 +29,28 @@ Society = [History, Geography]
 Science = list(map(int, Science))
 Society = list(map(int, Society))
 
-#선택정력 값을 직접 비교
-sum = 0
+#함수 정의
+def Calculation(Score):
+    count1 = 0
+    count2 = 0
+    temp = Score[count1]
+    for i in Score:
+        for j in Score:
+            if len(Score) == count2:
+                break
+            if Score[count1] < Score[count2]:
+                temp = Score[count2]
+                Score[count2] = Score[count1]
+                Score[count1] = temp
+            count2 += 1    
+        count1 += 1
+        count2 = count1
+    return Score
+
+Calculation(Science)
+Calculation(Society)
+
+'''
 count1 = 0
 count2 = 0
 Science_temp = Science[count1]
@@ -60,7 +80,11 @@ for i in Society:
         count2 += 1    
     count1 += 1
     count2 = count1
+'''
 
+sum = 0
+
+# 배열 한칸 줄임
 del Science[len(Science)-1]
 del Society[len(Society)-1]
 
@@ -73,4 +97,4 @@ for i in Society:
     sum += Society[count]
     count += 1
 
-print(sum)
+print("총점", sum)
