@@ -16,29 +16,61 @@
 #출력
 # JOI가 선택한 과목의 총 점수를 1행에 출력하시오.
 
-Physics = input("물리점수를 입력하시오. : ")
-Physics = int(Physics)
-Chemistry = input("화학점수를 입력하시오. : ")
-Chemistry = int(Chemistry)
-Biology = input("생물점수를 입력하시오. : ")
-Biology = int(Biology)
-EarthScience = input("지구과학 입력하시오. : ")
-EarthScience = int(EarthScience)
-History = input("역사점수를 입력하시오. : ")
-History = int(History)
-Geography = input("지리점수를 입력하시오. : ")
-Geography = int(Geography)
+Physics = input("물리점수를 입력하시오.     : ")
+Chemistry = input("화학점수를 입력하시오.     : ")
+Biology = input("생물점수를 입력하시오.     : ")
+EarthScience = input("지구과학점수를 입력하시오. : ")
+History = input("역사점수를 입력하시오.     : ")
+Geography = input("지리점수를 입력하시오.     : ")
 
 Science = [Physics, Chemistry, Biology, EarthScience]
 Society = [History, Geography]
 
-#선택정력 값을 직접 비교
-count = 0
-temp = 0
-for i in range(Science):
-    for j in range(Science):
-        if Science[i] < Science[j]:
-            temp = Science[j]
-        count += 1
+Science = list(map(int, Science))
+Society = list(map(int, Society))
 
-print(Science[1])
+#선택정력 값을 직접 비교
+sum = 0
+count1 = 0
+count2 = 0
+Science_temp = Science[count1]
+for i in Science:
+    for j in Science:
+        if len(Science) == count2:
+            break
+        if Science[count1] < Science[count2]:
+            Science_temp = Science[count2]
+            Science[count2] = Science[count1]
+            Science[count1] = Science_temp
+        count2 += 1    
+    count1 += 1
+    count2 = count1
+    
+count1 = 0
+count2 = 0
+Society_temp = Society[count1]
+for i in Society:
+    for j in Society:
+        if len(Society) == count2:
+            break
+        if Society[count1] < Society[count2]:
+            Society_temp = Society[count2]
+            Society[count2] = Society[count1]
+            Society[count1] = Society_temp
+        count2 += 1    
+    count1 += 1
+    count2 = count1
+
+del Science[len(Science)-1]
+del Society[len(Society)-1]
+
+count = 0
+for i in Science:
+    sum += Science[count]
+    count += 1
+count = 0
+for i in Society:
+    sum += Society[count]
+    count += 1
+
+print(sum)
